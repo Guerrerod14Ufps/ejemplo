@@ -1,0 +1,145 @@
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4; /* Cambiar el color de fondo si lo deseas */
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* Altura completa de la ventana */
+  display: flex; /* Usar flexbox para centrar el contenido */
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+}
+
+/* Contenedor principal */
+.container {
+  background-color: #fff; /* Fondo blanco para el contenedor */
+  padding: 20px;
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para profundidad */
+  text-align: center; /* Centrar texto */
+  width: 90%; /* Ancho fijo, puedes ajustarlo */
+  max-width: 1200px; /* Ancho máximo para pantallas grandes */
+}
+
+/* Estilo para inputs y select */
+input, select {
+  width: 100%; /* Tomar todo el ancho del contenedor */
+  padding: 10px; /* Ajustar padding */
+  margin: 10px 0; /* Margen entre inputs */
+  border: 1px solid #ccc; /* Borde gris */
+  border-radius: 5px; /* Bordes redondeados */
+  box-sizing: border-box; /* Asegurarse de que el padding y el borde se incluyan en el ancho total */
+}
+
+/* Estilo para el botón de búsqueda */
+button {
+  background-color: #007bff; /* Color azul para el botón */
+  color: white; /* Texto blanco */
+  padding: 10px; /* Espaciado interno */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cambiar cursor al pasar sobre el botón */
+  transition: background-color 0.3s; /* Transición suave */
+}
+
+/* Estilo para el botón de búsqueda al pasar el mouse */
+button:hover {
+  background-color: #0056b3; /* Color azul más oscuro al pasar el mouse */
+}
+
+/* Estilo para el contenedor de tarjetas */
+.card-grid {
+  display: grid; /* Usar grid para el diseño */
+  grid-template-columns: repeat(6, 1fr); /* 6 columnas de igual tamaño */
+  gap: 10px; /* Espacio entre las tarjetas */
+  padding: 20px; /* Espaciado interno en el contenedor */
+  overflow-x: auto; /* Habilitar desplazamiento horizontal */
+  max-height: 400px; /* Establecer una altura máxima (ajusta según sea necesario) */
+}
+
+/* Estilo adicional para el contenedor cuando se desplaza */
+.card-grid::-webkit-scrollbar {
+  height: 8px; /* Altura de la barra de desplazamiento */
+}
+
+.card-grid::-webkit-scrollbar-thumb {
+  background: #888; /* Color del "thumb" (parte que se mueve) */
+  border-radius: 10px; /* Bordes redondeados para el "thumb" */
+}
+
+.card-grid::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color del "thumb" al pasar el mouse */
+}
+
+/* Estilos para las tarjetas de cócteles */
+.card {
+  background-color: #fff; /* Fondo blanco para la tarjeta */
+  padding: 15px; /* Espaciado interno */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  text-align: center; /* Centrar texto */
+  cursor: pointer; /* Cambiar cursor al pasar sobre la tarjeta */
+}
+
+/* Estilo para la imagen de la tarjeta */
+.card img {
+  width: 100%; /* Ajustar imagen al ancho de la tarjeta */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Estilo para el pop-up */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semi-transparente */
+  display: flex; /* Usar flexbox para centrar el contenido */
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  z-index: 1000; /* Asegurarse de que esté encima de otros elementos */
+}
+
+/* Contenido del pop-up */
+.popup-content {
+  background-color: #fff; /* Fondo blanco para el contenido */
+  padding: 20px;
+  border-radius: 10px; /* Bordes redondeados */
+  width: 80%; /* Ancho del pop-up */
+  max-width: 500px; /* Ancho máximo */
+  position: relative; /* Para posicionar el botón de cierre */
+}
+
+/* Estilo para el encabezado del pop-up */
+.popup-content h2 {
+  margin: 0; /* Eliminar margen */
+}
+
+/* Estilo para el botón de cierre en el pop-up */
+.popup .close {
+  position: absolute;
+  top: 10px; /* Posicionar en la parte superior */
+  right: 10px; /* A la derecha */
+  font-size: 24px; /* Tamaño del icono de cierre */
+  cursor: pointer; /* Cambiar cursor al pasar sobre el botón de cierre */
+}
+
+/* Responsividad: ajustar el número de columnas en pantallas pequeñas */
+@media (max-width: 1200px) {
+  .card-grid {
+      grid-template-columns: repeat(4, 1fr); /* 4 columnas en pantallas medianas */
+  }
+}
+
+@media (max-width: 900px) {
+  .card-grid {
+      grid-template-columns: repeat(3, 1fr); /* 3 columnas en pantallas pequeñas */
+  }
+}
+
+@media (max-width: 600px) {
+  .card-grid {
+      grid-template-columns: 1fr; /* 1 columna en pantallas muy pequeñas */
+  }
+}
